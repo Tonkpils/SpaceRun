@@ -11,21 +11,44 @@ import SpriteKit
 
 class GameViewController: UIViewController {
 
+    var easyMode : Bool!
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        if let scene = GameScene(fileNamed:"GameScene") {
-            // Configure the view.
-            let skView = self.view as! SKView
-            skView.showsFPS = true
-            skView.showsNodeCount = true
-            
-            /* Sprite Kit applies additional optimizations to improve rendering performance */
-            skView.ignoresSiblingOrder = true
-            
-            /* Set the scale mode to scale to fit the window */
+        // Configure the view.
+        let skView = self.view as! SKView
+        skView.showsFPS = true
+        skView.showsNodeCount = true
+        /* Sprite Kit applies additional optimizations to improve rendering performance */
+        skView.ignoresSiblingOrder = true
+
+        let blackScene = SKScene(size: skView.bounds.size)
+        blackScene.backgroundColor = UIColor.blackColor()
+
+        skView.presentScene(blackScene)
+    }
+
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+
+        let skView = self.view as! SKView
+
+        let openingScene = OpeningScene(size: skView.bounds.size)
+        openingScene.scaleMode = .AspectFill
+        let transition = SKTransition.fadeWithDuration(1)
+        skView.presentScene(openingScene, transition: transition)
+        let weakself = self
+        openingScene.sceneEndCallback = {
+            let scene : GameScene = GameScene(size: skView.bounds.size)
+
+            scene.endGameCallback = {
+                weakself.navigationController?.popViewControllerAnimated(true)
+            }
+
+            scene.easyMode = weakself.easyMode
             scene.scaleMode = .AspectFill
-            
+
             skView.presentScene(scene)
         }
     }
