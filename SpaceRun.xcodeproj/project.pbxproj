@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		B36C04641C0CAFF100F4058D /* StarField.swift in Sources */ = {isa = PBXBuildFile; fileRef = B36C04631C0CAFF100F4058D /* StarField.swift */; };
 		B36C04661C0CB75B00F4058D /* shootingstar.png in Resources */ = {isa = PBXBuildFile; fileRef = B36C04651C0CB75B00F4058D /* shootingstar.png */; };
 		B36C04691C0CDC5600F4058D /* Thrust.sks in Resources */ = {isa = PBXBuildFile; fileRef = B36C04671C0CDC5600F4058D /* Thrust.sks */; };
 		B36C046A1C0CDC5600F4058D /* spark.png in Resources */ = {isa = PBXBuildFile; fileRef = B36C04681C0CDC5600F4058D /* spark.png */; };
@@ -18,6 +17,7 @@
 		B36C04791C0D157200F4058D /* OpeningScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = B36C04781C0D157200F4058D /* OpeningScene.swift */; };
 		B36C047B1C0E282600F4058D /* GameOverNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = B36C047A1C0E282600F4058D /* GameOverNode.swift */; };
 		B36C047E1C0E5B4000F4058D /* HUDNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = B36C047D1C0E5B4000F4058D /* HUDNode.swift */; };
+		B36C04BE1C0F8C4000F4058D /* StarField.swift in Sources */ = {isa = PBXBuildFile; fileRef = B36C04BD1C0F8C4000F4058D /* StarField.swift */; };
 		B3ACFC0F1C0B991500A35DFA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3ACFC0E1C0B991500A35DFA /* AppDelegate.swift */; };
 		B3ACFC111C0B991500A35DFA /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = B3ACFC101C0B991500A35DFA /* GameScene.sks */; };
 		B3ACFC131C0B991500A35DFA /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3ACFC121C0B991500A35DFA /* GameScene.swift */; };
@@ -54,7 +54,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		B36C04631C0CAFF100F4058D /* StarField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StarField.swift; path = ../StarField.swift; sourceTree = "<group>"; };
 		B36C04651C0CB75B00F4058D /* shootingstar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = shootingstar.png; sourceTree = "<group>"; };
 		B36C04671C0CDC5600F4058D /* Thrust.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Thrust.sks; sourceTree = "<group>"; };
 		B36C04681C0CDC5600F4058D /* spark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = spark.png; sourceTree = "<group>"; };
@@ -65,6 +64,7 @@
 		B36C04781C0D157200F4058D /* OpeningScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OpeningScene.swift; sourceTree = "<group>"; };
 		B36C047A1C0E282600F4058D /* GameOverNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameOverNode.swift; sourceTree = "<group>"; };
 		B36C047D1C0E5B4000F4058D /* HUDNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HUDNode.swift; sourceTree = "<group>"; };
+		B36C04BD1C0F8C4000F4058D /* StarField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StarField.swift; sourceTree = "<group>"; };
 		B3ACFC0B1C0B991500A35DFA /* SpaceRun.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SpaceRun.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B3ACFC0E1C0B991500A35DFA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B3ACFC101C0B991500A35DFA /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
@@ -155,7 +155,6 @@
 			children = (
 				B36C047C1C0E5B2900F4058D /* HUD */,
 				B36C04711C0D017E00F4058D /* Menu */,
-				B36C04631C0CAFF100F4058D /* StarField.swift */,
 				B3ACFC461C0C047600A35DFA /* obstacleExplode.m4a */,
 				B3ACFC471C0C047600A35DFA /* shipExplode.m4a */,
 				B3ACFC481C0C047600A35DFA /* shoot.m4a */,
@@ -164,6 +163,7 @@
 				B3ACFC411C0BC2EA00A35DFA /* photon.png */,
 				B3ACFC4C1C0CA3A400A35DFA /* powerup.png */,
 				B36C04651C0CB75B00F4058D /* shootingstar.png */,
+				B36C04BD1C0F8C4000F4058D /* StarField.swift */,
 				B3ACFC0E1C0B991500A35DFA /* AppDelegate.swift */,
 				B3ACFC101C0B991500A35DFA /* GameScene.sks */,
 				B3ACFC121C0B991500A35DFA /* GameScene.swift */,
@@ -348,8 +348,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B36C04641C0CAFF100F4058D /* StarField.swift in Sources */,
 				B36C047B1C0E282600F4058D /* GameOverNode.swift in Sources */,
+				B36C04BE1C0F8C4000F4058D /* StarField.swift in Sources */,
 				B36C04751C0D01AB00F4058D /* MenuViewController.swift in Sources */,
 				B36C04701C0CEB1C00F4058D /* SKEmitterNode+DieOnDuration.swift in Sources */,
 				B3ACFC131C0B991500A35DFA /* GameScene.swift in Sources */,
