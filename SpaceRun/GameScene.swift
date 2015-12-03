@@ -81,7 +81,7 @@ class GameScene: SKScene {
         }
 
         var thingProbability : Int
-        if let easyMode = self.easyMode where easyMode == true {
+        if self.easyMode == true {
             thingProbability = 15
         } else {
             thingProbability = 30

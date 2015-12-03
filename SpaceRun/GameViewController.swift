@@ -11,7 +11,7 @@ import SpriteKit
 
 class GameViewController: UIViewController {
 
-    var easyMode : Bool!
+    var easyMode : Bool?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,15 +38,16 @@ class GameViewController: UIViewController {
         openingScene.scaleMode = .AspectFill
         let transition = SKTransition.fadeWithDuration(1)
         skView.presentScene(openingScene, transition: transition)
-        let weakself = self
+
         openingScene.sceneEndCallback = {
+            [unowned self] in
             let scene : GameScene = GameScene(size: skView.bounds.size)
 
             scene.endGameCallback = {
-                weakself.navigationController?.popViewControllerAnimated(true)
+                self.navigationController?.popViewControllerAnimated(true)
             }
 
-            scene.easyMode = weakself.easyMode
+            scene.easyMode = self.easyMode
             scene.scaleMode = .AspectFill
 
             skView.presentScene(scene)

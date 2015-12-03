@@ -11,12 +11,13 @@ import SpriteKit
 
 class MenuViewController: UIViewController {
     @IBOutlet weak var difficultyChooserSegmentedControl: UISegmentedControl!
+
     var demoView : SKView!
 
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
 
-        self.demoView = SKView(frame: self.view.bounds) 
+        self.demoView = SKView(frame: self.view.bounds)
         let scene = SKScene(size: self.view.bounds.size)
         scene.backgroundColor = SKColor.blackColor()
         scene.scaleMode = .AspectFill
